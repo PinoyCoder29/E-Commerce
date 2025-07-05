@@ -21,7 +21,16 @@ const Header = () => {
             <Link className="nav-link">Contact</Link>
         </li>
        </ul>
+        
 
+        <ul className="navbar navbar-nav ms-auto">
+          <li className="nav-item">
+            <Link className="btn btn-success" to='/SignUp'>Get started</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link">Sign In</Link>
+          </li>
+        </ul>
       </div>
 
     </nav>
