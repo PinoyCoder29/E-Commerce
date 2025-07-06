@@ -9,7 +9,7 @@ const verifyEmail = async (req,res) =>{
     if(!firstName || !lastName || !birthdate || !gender || !email || !password ){
         return res.status(400).json({  
             message: 'all fields are required!',
-            succes: false,
+            success: false,
         })
     }
 
@@ -26,7 +26,7 @@ const verifyEmail = async (req,res) =>{
         if(existingOtp){
             return res.status(400).json({
                 message: 'otp already send, please wait a few minutes before trying again',
-                succes: false
+                success: false
             })
         }
 
@@ -49,7 +49,7 @@ const verifyEmail = async (req,res) =>{
 
         return res.status(200).json({
             message: 'otp has been sent to your email',
-            succes: true,
+            success: true,
             otp: otp
         })
        

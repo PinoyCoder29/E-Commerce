@@ -2,41 +2,51 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
+  const closeMenu = () => {
+    const navbar = document.getElementById('main-navbar');
+    if (navbar && navbar.classList.contains('show')) {
+      new window.bootstrap.Collapse(navbar).hide();
+    }
+  };
+
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-light shadow">
       <div className="container">
+        <Link className="navbar-brand" to="/" onClick={closeMenu}>E-Commerce</Link>
 
-        <Link className="navbar-brand" to="/">E-Commerce</Link>
-
-        {/* Mobile Toggle Button */}
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#main-navbar"
+          aria-controls="main-navbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Collapsible Content */}
         <div className="collapse navbar-collapse" id="main-navbar">
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
+              <Link className="nav-link" to="/" onClick={closeMenu}>Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about">About</Link>
+              <Link className="nav-link" to="/about" onClick={closeMenu}>About</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contact">Contact</Link>
+              <Link className="nav-link" to="/contact" onClick={closeMenu}>Contact</Link>
             </li>
           </ul>
-
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="btn btn-success me-2" to="/signup">Get started</Link>
+              <Link className="btn btn-success me-2" to="/signup" onClick={closeMenu}>Get started</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/signin">Sign In</Link>
+              <Link className="nav-link" to="/signin" onClick={closeMenu}>Sign In</Link>
             </li>
           </ul>
         </div>
-
       </div>
     </nav>
   )

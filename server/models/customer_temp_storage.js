@@ -27,7 +27,7 @@ const temp_Storage = async (data) => {
 
 const checkExistingOtp = (email) =>{
   return new Promise((resolve,reject) =>{
-z
+
     const sql = `SELECT * FROM customer_temp_storage 
     WHERE email = ? AND expires_at > NOW() LIMIT 1`
 
