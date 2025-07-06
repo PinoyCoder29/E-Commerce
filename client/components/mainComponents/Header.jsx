@@ -3,39 +3,42 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div>
-      
-     <nav className='navbar navbar-expand-md navbar-light bg-light shadow'>
-      <div className='container d-flex justify-content-between'>
+    <nav className="navbar navbar-expand-md navbar-light bg-light shadow">
+      <div className="container">
 
-        <h1 className='navbar-brand'>E-Commerce</h1>
-       
-       <ul className="navbar navbar-nav mx-auto">
-        <li className="nav-item">
-            <Link className="nav-link">Home</Link>
-        </li>
-        <li className="nav-item">
-            <Link className="nav-link">About</Link>
-        </li>
-        <li className="nav-item">
-            <Link className="nav-link">Contact</Link>
-        </li>
-       </ul>
-        
+        <Link className="navbar-brand" to="/">E-Commerce</Link>
 
-        <ul className="navbar navbar-nav ms-auto">
-          <li className="nav-item">
-            <Link className="btn btn-success" to='/SignUp'>Get started</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link">Sign In</Link>
-          </li>
-        </ul>
+        {/* Mobile Toggle Button */}
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        {/* Collapsible Content */}
+        <div className="collapse navbar-collapse" id="main-navbar">
+          <ul className="navbar-nav mx-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to="/">Home</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/about">About</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/contact">Contact</Link>
+            </li>
+          </ul>
+
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <Link className="btn btn-success me-2" to="/signup">Get started</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/signin">Sign In</Link>
+            </li>
+          </ul>
+        </div>
+
       </div>
-
     </nav>
-
-    </div>
   )
 }
 
