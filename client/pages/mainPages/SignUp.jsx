@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SIgnUp = () => {
+const SignUp = () => {
   return (
    
     <main className="p-5">
@@ -45,4 +45,4 @@ const SIgnUp = () => {
   )
 }
 
-export default SIgnUp
+export default SignUp
