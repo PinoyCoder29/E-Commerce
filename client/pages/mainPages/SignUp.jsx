@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
 import axios from 'axios'
 import 'react-toastify/dist/ReactToastify.css'
 
 const SignUp = () => {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -29,7 +30,11 @@ const SignUp = () => {
       const response = await axios.post('http://localhost:5000/api/customer/verifyEmail', formData)
 
       if (response.status === 200 && response.data.success) {
+        
         toast.success(response.data.message)
+        setTimeout(() => {
+          navigate(`/verifyOtp?email=${btoa(formData.email)}`)
+        }, 5000);
       }
     } catch (error) {
       if (error.response.status === 400) {
@@ -143,7 +148,8 @@ const SignUp = () => {
           </div>
         </div>
       </section>
-      <ToastContainer />
+     <ToastContainer/>
+
     </main>
   )
 }
