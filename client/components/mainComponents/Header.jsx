@@ -43,7 +43,7 @@ const Header = () => {
               <Link className="btn btn-success me-2" to="/signup" onClick={closeMenu}>Get started</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/signin" onClick={closeMenu}>Sign In</Link>
+              <Link className="nav-link" to="/SignIn" onClick={closeMenu}>Sign In</Link>
             </li>
           </ul>
         </div>

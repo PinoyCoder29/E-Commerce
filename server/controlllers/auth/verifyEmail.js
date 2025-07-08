@@ -29,6 +29,26 @@ const verifyEmail = async (req,res) =>{
                 success: false
             })
         }
+        
+                    const birthDateObj = new Date(birthdate)
+            const today = new Date()
+
+            // Compute age
+            let age = today.getFullYear() - birthDateObj.getFullYear()
+            const monthDiff = today.getMonth() - birthDateObj.getMonth()
+
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDateObj.getDate())) {
+            age--
+            }
+
+            // Check if user is 14 or below
+            if (age <= 14) {
+            return res.status(400).json({
+                message: 'You must be at least 15 years old to register.',
+                success: false
+            })
+}
+        
 
         const otp = generateOtp()
         const expires_at = new Date(Date.now() + 5 * 60 * 1000)

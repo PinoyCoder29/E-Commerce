@@ -6,7 +6,7 @@ const verifyOtp = async (req,res) =>{
 
     if(!email || !otp){
         return res.status(400).json({
-            message: 'all fields are required!',
+            message: 'Otp are required!',
             success: false,
         })
     }

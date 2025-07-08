@@ -33,8 +33,8 @@ const SignUp = () => {
         
         toast.success(response.data.message)
         setTimeout(() => {
-          navigate(`/verifyOtp?email=${btoa(formData.email)}`)
-        }, 5000);
+          navigate(`/verifyOtp?email=${encodeURIComponent(formData.email)}`)
+        }, 3000);
       }
     } catch (error) {
       if (error.response.status === 400) {
@@ -139,7 +139,7 @@ const SignUp = () => {
                     </div>
 
                     <div className='text-center mt-2'>
-                      <Link className='nav-link'>You have an account?<span className='text-primary'> Sign In</span></Link>
+                      <Link className='nav-link'to='/SignIn'>You have an account?<span className='text-primary'> Sign In</span></Link>
                     </div>
                   </div>
                 </form>
