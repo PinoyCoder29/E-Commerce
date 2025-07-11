@@ -1,5 +1,5 @@
 import React from 'react'
-import AuthHeader from '../../components/authComponents/authHeader'
+import AuthHeader from '../../components/authComponents/AuthHeader'
 import { Outlet } from 'react-router-dom'
 
 
