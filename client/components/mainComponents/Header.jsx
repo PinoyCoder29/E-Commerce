@@ -7,12 +7,13 @@ const Header = () => {
     if (navbar && navbar.classList.contains('show')) {
       new window.bootstrap.Collapse(navbar).hide();
     }
+
   };
 
   return (
-    <nav className="navbar navbar-expand-md navbar-light bg-light shadow">
+    <nav className="navbar navbar-expand-md navbar-dark bg-dark shadow">
       <div className="container">
-        <Link className="navbar-brand" to="/" onClick={closeMenu}>E-Commerce</Link>
+        <Link className="navbar-brand text-warning" to="/" onClick={closeMenu}>E-Commerce</Link>
 
         <button
           className="navbar-toggler"
@@ -32,7 +33,7 @@ const Header = () => {
               <Link className="nav-link" to="/" onClick={closeMenu}>Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about" onClick={closeMenu}>About</Link>
+              <Link className="nav-link" to="/About" onClick={closeMenu}>About</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/contact" onClick={closeMenu}>Contact</Link>
@@ -40,7 +41,7 @@ const Header = () => {
           </ul>
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="btn btn-success me-2" to="/signup" onClick={closeMenu}>Get started</Link>
+              <Link className="btn btn-warning me-2" to="/signup" onClick={closeMenu}>Get started</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/SignIn" onClick={closeMenu}>Sign In</Link>

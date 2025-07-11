@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import axios from 'axios' 
 import { toast, ToastContainer } from 'react-toastify'
-import {useNavigate } from 'react-router-dom'
+import {Link, useNavigate } from 'react-router-dom'
 const SignIn = () => {
     const navigate = useNavigate()
     const [email,setEmail] = useState('')
@@ -32,12 +32,12 @@ const SignIn = () => {
   return (
     <div>
       
-    <main className="p-5">
+    <main className="p-5 bg-dark">
         <section className="container">
             <div className="row d-flex justify-content-center">
                 <div className="col-md-6">
                     <article className="card">
-                        <h1 className='text-primary text-center'>Sign In</h1>
+                        <h1 className='text-dark text-center'>Sign In</h1>
                         <div className="card-body">
 
                             <form action="" onSubmit={handleSignInSubmit}>
@@ -64,8 +64,11 @@ const SignIn = () => {
                                      />
                                 </div>
                                 <div className='text-center mt-3'>
-                                <button type='submit' className='btn btn-primary px-5'>Submit</button>
+                                <button type='submit' className='btn btn-warning px-5'>Log In</button>
+                                </div>
 
+                                <div className='text-center'>
+                                   <Link className='nav-link text-primary' to='/ForgotPassword'>Forgot Password?</Link>
                                 </div>
  
                             </form>
@@ -75,7 +78,7 @@ const SignIn = () => {
                 </div>
             </div>
         </section>
-        <ToastContainer/>
+        <ToastContainer theme='dark'/>
     </main>
 
     </div>

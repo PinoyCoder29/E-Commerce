@@ -46,13 +46,13 @@ const SignUp = () => {
   }
 
   return (
-    <main className="p-4">
+    <main className="p-4 bg-dark">
       <section className="container">
         <div className="row justify-content-center">
           <div className="col-md-6">
             <article className="card">
               <header className="text-center p-3">
-                <h1 className="card-title text-primary">Sign Up</h1>
+                <h1 className="card-title ">Sign Up</h1>
               </header>
               <div className="card-body">
                 <form onSubmit={handleSignUpSubmit}>
@@ -135,7 +135,7 @@ const SignUp = () => {
                     </div>
 
                     <div className='text-center'>
-                      <button type="submit" className='btn btn-primary px-5 shadow'>Submit</button>
+                      <button type="submit" className='btn btn-warning px-5 shadow'>Submit</button>
                     </div>
 
                     <div className='text-center mt-2'>
@@ -148,7 +148,7 @@ const SignUp = () => {
           </div>
         </div>
       </section>
-     <ToastContainer/>
+     <ToastContainer theme='dark'/>
 
     </main>
   )

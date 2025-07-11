@@ -60,7 +60,7 @@ const VerifyOtp = () => {
                   </div>
 
                     <div className="card-footer d-flex justify-content-end gap-3" >
-                    <button className="btn btn-secondary" onClick={() => navigate(-1)}>Cancel</button>
+                    <button className="btn btn-secondary" type='button' onClick={() => navigate(-1)}>Cancel</button>
                       <button type='submit' className="btn btn-primary">Submit</button>
                     </div>
                   </form>
@@ -68,7 +68,7 @@ const VerifyOtp = () => {
               </div>
             </div>
         </section>
-        <ToastContainer/>
+        <ToastContainer theme='dark'/>
      </main>
 
     </div>

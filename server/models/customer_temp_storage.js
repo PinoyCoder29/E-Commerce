@@ -41,7 +41,22 @@ const checkExistingOtp = (email) =>{
   })
   
 }
+
+
+const forgotPasswordTempStorage = (email, otp) => {
+  return new Promise((resolve, reject) => {
+    const sql = `INSERT INTO customer_temp_storage (email, otp) VALUES (?, ?)`;
+    conn.query(sql, [email, otp], (err, results) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(results);
+      }
+    });
+  });
+};
+
 module.exports = {
-  temp_Storage,checkExistingOtp
+  temp_Storage,checkExistingOtp,forgotPasswordTempStorage
 
 };

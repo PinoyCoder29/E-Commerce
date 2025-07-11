@@ -72,9 +72,29 @@ const getUserByEmail = (email) =>{
     }
   })
 }
+
+const verifyForgotPasswordEmail = async(email) =>{
+  return new Promise((resolve,reject) =>{
+    try {
+      const sql = 'SELECT email FROM customerlogin WHERE email = ?'
+      conn.query(sql,[email],(err,results) =>{
+        if(err){
+           reject(err)
+        }else{
+          resolve(results[0])
+        }
+      })
+    } catch (error) {
+      
+    }
+  })
+}
 module.exports = {
   verifyEmailExists,
   getByEmailAndOtp,
   saveVerifiedUser,
-  getUserByEmail
+  getUserByEmail,
+  verifyForgotPasswordEmail
 };
+
+
