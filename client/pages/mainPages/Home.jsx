@@ -42,27 +42,29 @@ const Home = () => {
 
             <div className="col-md-6">
               <div
-                className="bg-secondary rounded-circle position-relative"
+              className="bg-secondary rounded-circle position-relative mx-auto"
+              style={{
+                width: '80vw',
+                maxWidth: '400px',
+                height: '80vw',
+                maxHeight: '400px',
+                boxShadow: '-15px 30px 30px rgba(255, 255, 0, 0.6)',
+              }}
+            >
+              <img
+                src={images[currentIndex]}
+                alt="Shoes"
                 style={{
-                  width: '400px',
-                  height: '400px',
-                  position: 'relative',
-                  boxShadow: '-15px 30px 30px rgba(255, 255, 0, 0.6)'
+                  position: 'absolute',
+                  left: '-10%',
+                  transform: 'rotate(-20deg)',
+                  transition: 'all 0.5s ease-in-out',
+                  width: '120%',
+                  objectFit: 'contain',
                 }}
-              >
-                <img
-                  src={images[currentIndex]} // ✅ fixed here
-                  alt="Shoes"
-                  style={{
-                    position: 'absolute',
-                    left: '-70px',
-                    transform: 'rotate(-20deg)',
-                    transition: 'all 0.5s ease-in-out',
-                    width: '530px',
-                     objectFit: 'contain',
-                  }}
-                />
-              </div>
+              />
+            </div>
+
             </div>
 
           </div>

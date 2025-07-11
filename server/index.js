@@ -6,7 +6,9 @@ const port = process.env.APP_PORT || 5000;
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-app.use(cors())
+app.use(cors({
+    origin:'e-commerce-wgl1.vercel.app' 
+}))
 //Customer routes
 const CustomerRoutes = require('./routes/CustomerRoute')
 app.use('/api/customer',CustomerRoutes)
