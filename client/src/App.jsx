@@ -9,7 +9,7 @@ import About from '../pages/mainPages/About'
 import AuthLayout from '../layout/authLayout/AuthLayout'
 import ForgotPassword from '../pages/authPages/ForgotPassword'
 import VerifyOtp_ForgotPassword from '../pages/authPages/VerifyOtp_ForgotPassword'
-import Verify_NewPassword from '../pages/authPages/verify_NewPassword'
+import Verify_NewPassword from '../pages/authPages/Verify_NewPassword'
 
 const App = () => {
   return (
