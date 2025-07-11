@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import MainLayout from '../layout/MainLayout'
-import SignUp from '../pages/mainPages/SIgnUp'           // make sure "I" is lowercase
+import Sign_Up from '../pages/mainPages/Sign_Up'           // make sure "I" is lowercase
 import VerifyOtp from '../pages/mainPages/VerifyOtp'
 import SignIn from '../pages/mainPages/SignIn'
 import Home from '../pages/mainPages/Home'
@@ -18,7 +18,7 @@ const App = () => {
       <Route path='/' element={<MainLayout />}>
         <Route index element={<Home />} />
         <Route path='about' element={<About />} />
-        <Route path='signup' element={<SignUp />} />
+        <Route path='signup' element={<Sign_Up />} />
         <Route path='verifyOtp' element={<VerifyOtp />} />
         <Route path='signin' element={<SignIn />} />
       </Route>

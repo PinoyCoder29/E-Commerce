@@ -4,7 +4,7 @@ import { toast, ToastContainer } from 'react-toastify'
 import axios from 'axios'
 import 'react-toastify/dist/ReactToastify.css'
 
-const SignUp = () => {
+const Sign_Up = () => {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
     firstName: '',
@@ -154,4 +154,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default Sign_Up
