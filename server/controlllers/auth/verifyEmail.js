@@ -1,6 +1,7 @@
-const verify_emailModel = require('../../models/adminModel/verify_emailModel')
-const generateotp = require('../../utils/generateOtp')
-const otp_temp_storageModel = require('../../models/adminModel/otp_temp_storageModel')
+const verify_emailModel = require('../../../models/adminModel/verify_emailModel')
+const generateotp = require('../../../utils/generateOtp')
+const otp_temp_storageModel = require('../../../models/adminModel/otp_temp_storageModel')
+const {sendEmail} = require('../../../utils/sendOtpEmail')
 const verifyEmail = async (req,res) =>{
     const {email,password} = req.body
     
@@ -14,7 +15,13 @@ const verifyEmail = async (req,res) =>{
         const user = await verify_emailModel(email)
         if(!user){
             return res.status(400).json({
-                messsage: 'Email are not found,please try another email',
+                messsage: 'Email  not found,please try another email',
+                success: false
+            })
+        }
+        if(user.password !== password){
+            return res.status(400).json({
+                message: 'Incorrect email or password!',
                 success: false
             })
         }
@@ -23,9 +30,11 @@ const verifyEmail = async (req,res) =>{
         
         await otp_temp_storageModel(email,otp,expires_at)
         
+        await sendEmail(email,otp)
         return res.status(200).json({
             message:'otp has been send to your email',
-            success: true
+            success: true,
+            otp: otp
         })
     } catch (error) {
         console.log(error)

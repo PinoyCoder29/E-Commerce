@@ -1,7 +1,7 @@
 const comparedPassword = require('../../utils/comparedPassword');
 const customerModel = require('../../models/customerModel');
 const jwt = require('jsonwebtoken')
-require('dotenv').config
+require('dotenv').config()
 const signIn = async (req, res) => {
   const { email, password } = req.body;
 
@@ -31,7 +31,7 @@ const signIn = async (req, res) => {
       });
     }
      const accessToken = jwt.sign(
-      { sub: user.sub, username: user.username },
+      { sub: user.id, username: user.username,role: user.role },
       process.env.SECRET_KEY,
       { expiresIn: '1h' }
     );

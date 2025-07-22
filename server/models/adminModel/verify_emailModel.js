@@ -6,7 +6,7 @@ const verify_emailModel = (email) =>{
             if(err){
                 reject(err)
             }else{
-                resolve(results)
+                resolve(results[0])
             }
         })
     })
