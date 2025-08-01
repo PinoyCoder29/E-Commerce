@@ -34,13 +34,19 @@ const AdminHeader = () => {
             </div>
 
             <div className='mb-2'>
+              <NavLink to='/AdminLayout/ProductList' style={navLinkStyle}>
+                <i className="bi bi-box mx-2"></i>Product List
+              </NavLink>
+            </div>
+
+            <div className='mb-2'>
               <NavLink to='Order' style={navLinkStyle}>
                 <i className="bi bi-bag mx-2"></i>Order
               </NavLink>
             </div>
 
             <div className='mb-2'>
-              <NavLink to='/Customer' style={navLinkStyle}>
+              <NavLink to='/AdminLayout/CustomerList' style={navLinkStyle}>
                 <i className="bi bi-people mx-2"></i>Customer
               </NavLink>
             </div>

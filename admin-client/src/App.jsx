@@ -8,6 +8,9 @@ import AdminLayout from '../layout/AdminLayout.jsx'
 import DashBoard from '../pages/admin/DashBoard.jsx'
 import Product from '../pages/admin/Product.jsx'
 import Order from '../pages/admin/Order.jsx'
+import ProductList from '../pages/admin/ProductLIst.jsx'
+import CustomerList from '../pages/admin/CustomerList.jsx'
+
 
 const App = () => {
   return (
@@ -15,6 +18,7 @@ const App = () => {
      <Routes>
       <Route path='/' element={<MainLayout/>} >
      <Route index element={<Home/>}/>
+     <Route path='Home' element={<Home/>} />
      <Route path='SignIn' element={<SignIn/>}/>
      <Route path='Verify_Otp' element={<VerifyOtp/>} />
     </Route>
@@ -23,7 +27,9 @@ const App = () => {
     <Route index element={<DashBoard/>} />
     <Route path='DashBoard' element={<DashBoard/>} />
     <Route path='Product' element={<Product/>} />
+    <Route path ='ProductList' element={<ProductList/>} />
     <Route path='Order' element={<Order/>}/>
+    <Route path='CustomerList' element={<CustomerList/>} />
     </Route>
     
      </Routes>

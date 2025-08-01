@@ -8,7 +8,7 @@ const signIn = async (req, res) => {
   if (!email || !password) {
     return res.status(400).json({
       message: 'All fields are required!',
-      success: false,
+      success: false, 
     });
   }
 
@@ -31,9 +31,9 @@ const signIn = async (req, res) => {
       });
     }
      const accessToken = jwt.sign(
-      { sub: user.id, username: user.username,role: user.role },
+      { id: user.id, email: user.email,role:'customer'},
       process.env.SECRET_KEY,
-      { expiresIn: '1h' }
+      { expiresIn: '1h'}
     );
     return res.status(200).json({
       message: 'Sign In Successfully',

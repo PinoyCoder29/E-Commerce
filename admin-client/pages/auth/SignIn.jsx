@@ -17,11 +17,13 @@ const SignIn = () => {
                 password,
             })
             if(response.status === 200){
-                setTimeout(() => {
+                
                 toast.success(response.data.message)
+            } 
+            setTimeout(() => {
                 navigate(`/Verify_Otp?email=${encodeURIComponent(email)}`)
-                }, 1500);
-            }
+                
+            }, 1500);
         } catch (error) {
             if(error.response.status === 400){
               toast.error(error.response.data.message)

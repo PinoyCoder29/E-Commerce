@@ -1,6 +1,5 @@
 const customerModel = require('../../models/customerModel')
 
-
 const verifyOtp = async (req,res) =>{
     const {email,otp} = req.body
 

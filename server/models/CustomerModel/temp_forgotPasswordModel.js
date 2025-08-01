@@ -1,5 +1,5 @@
 const conn = require('../../config/database')
-const temp_forgotPassword = async (data) =>{
+const temp_forgotPasswordModel = async (data) =>{
  return new Promise((resolve,reject) =>{
     const sql = `INSERT INTO tempstorage_forgotpassword (email,otp,expires_at) values (?,?,?)`
     const values = [
@@ -17,4 +17,4 @@ const temp_forgotPassword = async (data) =>{
  })
 }
 
-module.exports = temp_forgotPassword
+module.exports = temp_forgotPasswordModel

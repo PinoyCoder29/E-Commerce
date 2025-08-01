@@ -10,6 +10,16 @@ import AuthLayout from '../layout/authLayout/AuthLayout'
 import ForgotPassword from '../pages/authPages/ForgotPassword'
 import VerifyOtp_ForgotPassword from '../pages/authPages/VerifyOtp_ForgotPassword'
 import Verify_NewPassword from '../pages/authPages/Verify_NewPassword'
+import CustomerLayout from '../layout/Customerlayout/CustomerLayout'
+import HomePage from '../pages/CustomerPages/Home/HomePage'
+import ProductDetail from '../pages/CustomerPages/ProductDetails/ProductDetail'
+import Cart from '../pages/Cart/Cart'
+import OrderPending from '../pages/OrderPending/OrderPending'
+import Order from '../pages/Order/Order'
+import OrderToReceive from '../pages/OrderPending/OrderToReceive'
+import OrderReceived from '../pages/OrderPending/OrderReceived'
+import OrderReview from '../pages/OrderPending/OrderReview'
+
 
 const App = () => {
   return (
@@ -29,6 +39,25 @@ const App = () => {
         <Route path='VerifyOtp_ForgotPassword' element={<VerifyOtp_ForgotPassword/>} />
         <Route path='Verify_NewPassword' element={<Verify_NewPassword/>}/>
       </Route>
+
+      <Route path='/CustomerLayout' element={<CustomerLayout/>} >
+       <Route index element={<HomePage/>} /> 
+       <Route path='HomePage' element={<HomePage/>} />
+       <Route path='ProductDetail/:productId' element={<ProductDetail/>}/>
+       <Route path='cart' element={<Cart/>} />
+
+        <Route path='Order' element={<Order/>}>
+        <Route index element={<OrderPending/>}/>
+        <Route path='OrderPending' element={<OrderPending/>} />
+        <Route path='Order_ToReceive' element={<OrderToReceive/>} />
+        <Route path='Order_Received' element={<OrderReceived/>} />
+        <Route path='Order_Review' element={<OrderReview/>} />
+        </Route>    
+        
+      </Route>
+
+     
+      
     </Routes>
   )
 }

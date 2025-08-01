@@ -16,10 +16,12 @@ const VerifyOtp = () => {
         otp
       })
       if(response.status === 200){
-        toast.success(response.data.message)
         setOtp('')
-        localStorage.setItem('token', response.data.token) // Assuming the token is returned in the response
+        toast.success(response.data.message)
+        localStorage.setItem('token', response.data.token)
+        setTimeout(() => {
        navigate('/AdminLayout/DashBoard')
+        }, 1500); // Assuming the token is returned in the response
       }
     } catch (error) {
       if(error.response.status === 400 ){

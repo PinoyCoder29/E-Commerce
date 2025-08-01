@@ -17,11 +17,11 @@ const SignIn = () => {
                 password,
             })
             if(response.status === 200){
+                localStorage.setItem('token',response.data.token)
+                 toast.success(response.data.message)
                 setTimeout(() => {
-                toast.success(response.data.message)
-                
-                navigate('')
-                }, 3000);
+                navigate('/CustomerLayout/HomePage')
+                }, 1500);
             }
         } catch (error) {
             if(error.response.status === 400){
@@ -35,7 +35,7 @@ const SignIn = () => {
     <main className="p-5 bg-dark">
         <section className="container">
             <div className="row d-flex justify-content-center">
-                <div className="col-md-6">
+                <div className="col-md-5">
                     <article className="card">
                         <h1 className='text-dark text-center'>Sign In</h1>
                         <div className="card-body">
